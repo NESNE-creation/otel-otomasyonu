@@ -1,53 +1,120 @@
 package otelotomasyonu;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
-public class MusteriBilgi {
+public class MusteriBilgi extends JFrame {
+    MusteriBilgi(){
 
-	    private int id;             // Veritabanı ID'si
-	    private String ad;
-	    private String soyad;
-	    private int tc;
-	    private int telefon;
-	    private String eposta;
-	    private int odaNo;       
-	    private String adres;   
+        // Ana Panel Ayarları
+        JPanel panel = new JPanel();
+        panel.setBounds(5,5,890,590);
+        panel.setBackground(new Color(3,45,48));
+        panel.setLayout(null);
+        add(panel);
 
-	    // 1. Boş Yapıcı Metot (Veritabanı işlemleri için gerekli)
-	    public MusteriBilgi() {
-	    }
+        // Müşteri Verilerinin Listeleneceği Tablo
+        JTable tablo = new JTable();
+        tablo.setBounds(10,40,900,450);
+        tablo.setBackground(new Color(3,45,48));
+        tablo.setForeground(Color.WHITE);
+        panel.add(tablo);
 
-	    public MusteriBilgi(int id, String ad, String soyad, int tc, int telefon, String eposta, int odaNo, String adres) {
-	        this.id = id;
-	        this.ad = ad;
-	        this.soyad = soyad;
-	        this.tc = tc;
-	        this.telefon = telefon;
-	        this.eposta = eposta;
-	        this.odaNo = odaNo;
-	        this.adres = adres;
-	    }
+        // --- VERİTABANI BAĞLANTISI ---
+        try {
+            // Senin paylaştığın baglanti class'ından nesne oluşturuyoruz
+            baglanti b = new baglanti();
+            
+            // Müşteri tablosundaki tüm verileri çeken sorgu
+            String sorgu = "select * from Customer"; 
+            
+            // Senin baglanti sınıfındaki 's' (Statement) nesnesini kullanıyoruz
+            ResultSet resultSet = b.s.executeQuery(sorgu);
+            
+            // Gelen verileri tabloya aktarıyoruz
+           // tablo.setModel(DbUtils.resultSetToTableModel(resultSet));
 
-	    public int getId() { return id; }
-	    public void setId(int id) { this.id = id; }
+        } catch (Exception e ){
+            System.out.println("Müşteri bilgileri yüklenirken hata oluştu!");
+            e.printStackTrace();
+        }
+        // ------------------------------
 
-	    public String getAd() { return ad; }
-	    public void setAd(String ad) { this.ad = ad; }
+        // Tablo Sütun Başlıkları
+        JLabel idEtiketi = new JLabel("Kimlik");
+        idEtiketi.setBounds(31,11,100,14);
+        idEtiketi.setForeground(Color.WHITE);
+        idEtiketi.setFont( new Font("Tahoma", Font.BOLD,14));
+        panel.add(idEtiketi);
 
-	    public String getSoyad() { return soyad; }
-	    public void setSoyad(String soyad) { this.soyad = soyad; }
+        JLabel numaraEtiketi = new JLabel("Numara");
+        numaraEtiketi.setBounds(150,11,100,14);
+        numaraEtiketi.setForeground(Color.WHITE);
+        numaraEtiketi.setFont( new Font("Tahoma", Font.BOLD,14));
+        panel.add(numaraEtiketi);
 
-	    public int getTc() { return tc; }
-	    public void setTcNo(int tc) { this.tc = tc; }
+        JLabel adEtiketi = new JLabel("İsim");
+        adEtiketi.setBounds(270,11,100,14);
+        adEtiketi.setForeground(Color.WHITE);
+        adEtiketi.setFont( new Font("Tahoma", Font.BOLD,14));
+        panel.add(adEtiketi);
 
-	    public int getTelefon() { return telefon; }
-	    public void setTelefon(int telefon) { this.telefon = telefon; }
+        JLabel cinsiyetEtiketi = new JLabel("Cinsiyet");
+        cinsiyetEtiketi.setBounds(360,11,100,14);
+        cinsiyetEtiketi.setForeground(Color.WHITE);
+        cinsiyetEtiketi.setFont( new Font("Tahoma", Font.BOLD,14));
+        panel.add(cinsiyetEtiketi);
 
-	    public String getEposta() { return eposta; }
-	    public void setEposta(String eposta) { this.eposta = eposta; }
+        JLabel ulkeEtiketi = new JLabel("Ülke");
+        ulkeEtiketi.setBounds(480,11,100,25);
+        ulkeEtiketi.setForeground(Color.WHITE);
+        ulkeEtiketi.setFont( new Font("Tahoma", Font.BOLD,14));
+        panel.add(ulkeEtiketi);
 
-	    public int getOdaNo() { return odaNo; }
-	    public void setOdaNo(int odaNo) { this.odaNo = odaNo; }
+        JLabel odaEtiketi = new JLabel("Oda");
+        odaEtiketi.setBounds(600,11,100,14);
+        odaEtiketi.setForeground(Color.WHITE);
+        odaEtiketi.setFont( new Font("Tahoma", Font.BOLD,14));
+        panel.add(odaEtiketi);
 
-	    public String getAdres() { return adres; }
-	    public void setAdres(String adres) { this.adres = adres; }
-	}
+        JLabel zamanEtiketi = new JLabel("Giriş Zamanı"); // CI Time = Check-In Time
+        zamanEtiketi.setBounds(680,11,100,14);
+        zamanEtiketi.setForeground(Color.WHITE);
+        zamanEtiketi.setFont( new Font("Tahoma", Font.BOLD,14));
+        panel.add(zamanEtiketi);
+
+        JLabel depoEtiketi = new JLabel("Depozito");
+        depoEtiketi.setBounds(800,11,100,25);
+        depoEtiketi.setForeground(Color.WHITE);
+        depoEtiketi.setFont( new Font("Tahoma", Font.BOLD,14));
+        panel.add(depoEtiketi);
+
+        // Geri Dönüş Butonu
+        JButton butonGeri = new JButton("GERİ");
+        butonGeri.setBounds(450,510,120,30);
+        butonGeri.setBackground(Color.BLACK);
+        butonGeri.setForeground(Color.WHITE);
+        panel.add(butonGeri);
+        
+        butonGeri.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false); // Pencereyi kapatır
+            }
+        });
+
+        // JFrame Pencere Ayarları
+        setUndecorated(true);
+        setLayout(null);
+        setSize(900,600);
+        setLocation(500,100);
+        setVisible(true);
+    }
+    
+    public static void main(String[] args) {
+        new MusteriBilgi();
+    }
+}
