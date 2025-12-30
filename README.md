@@ -1,7 +1,7 @@
 # 🏨 Otel Otomasyon Sistemi
 Nesne tabanlı programlama dersi için dönem sonu grup projesi: otel otomasyonu
 
-#Otel Otomasyonu Hakkında
+# Otel Otomasyonu Hakkında
 Projenin amacı, bir otelin günlük operasyonlarını dijital ortamda yönetebilmesini sağlayan Otel Otomasyon Sistemi geliştirmektir.
 Java dili kullanılarak geliştirilmiştir.
 
