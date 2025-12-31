@@ -1,19 +1,21 @@
 # 🏨 Otel Otomasyon Sistemi
 Nesne tabanlı programlama dersi için dönem sonu grup projesi: otel otomasyonu
 
-# Projenin Videosu
+# 🚀 Projenin Videosu Ve Raporu
+Projenin çalışma mantığını ve arayüzünü aşağıdaki bağlantılardan inceleyebilirsiniz:
 
-Projenin çalıştığı halinin ekran kaydırıdr. Bu video Roza Halisdemir'in bilgisayarından çekilmiştir.
-| (https://drive.google.com/file/d/1DtT8if8_rHmB_tnMIghCeXpNRFAQ9GzA/view?usp=drive_link) |
-| (Ekran Kaydı 2025-12-30 043808.mp4) |
+| Kaynak | Bağlantı |
+| :--- | :--- |
+| 🎥 **Proje Videosu** | [Google Drive üzerinden izle](https://drive.google.com/file/d/1DtT8if8_rHmB_tnMIghCeXpNRFAQ9GzA/view?usp=drive_link) |
+| 📄 **Proje Raporu** | [Google Docs üzerinden incele](https://docs.google.com/document/d/1OYp7aRkCaKdm4SFKPpNYtBt5qQovOk5u0Br5U0bLSH0/edit?tab=t.0) |
 
-# Projenin Raporu
+> [!NOT]
+> Tanıtım videosu ekip üyelerimizden Roza Halisdemir'in bilgisayarında kaydedilmiştir.
 
-| https://docs.google.com/document/d/1OYp7aRkCaKdm4SFKPpNYtBt5qQovOk5u0Br5U0bLSH0/edit?tab=t.0 |
 
-# Otel Otomasyonu Hakkında
-Projenin amacı, bir otelin günlük operasyonlarını dijital ortamda yönetebilmesini sağlayan Otel Otomasyon Sistemi geliştirmektir.
-Java dili kullanılarak geliştirilmiştir.
+## 📝 Otel Otomasyonu Proje Hakkında
+Bu proje, Nesne Tabanlı Programlama dersi kapsamında geliştirilmiş bir **Otel Otomasyon Sistemi**'dir. Amacı, bir otelin günlük operasyonlarını (rezervasyon, oda yönetimi, müşteri takibi vb.) dijital ortamda verimli bir şekilde yönetebilmeyi sağlamaktır.
+* 💻 **Dil:** Java
 
 ## 👥 Proje Ekibi
 Ekip üyelerimiz aşağıdaki gibidir:
